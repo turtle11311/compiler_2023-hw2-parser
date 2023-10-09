@@ -1,0 +1,11 @@
+# generated files
+## Test
+test/output
+## parser
+parser
+parser.o
+parser.c
+parser.h
+## scanner
+scanner.c
+scanner.o
