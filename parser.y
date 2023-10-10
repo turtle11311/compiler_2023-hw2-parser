@@ -41,6 +41,10 @@ static void yyerror(const char *msg);
 %token KNOT DOTDOT
 %token KAND KOR
 
+%left PLUS MINUS
+%left STAR SLASH
+%left Uaddop
+
 %union {
   int val;
   char* text;
@@ -143,6 +147,7 @@ simple_expression: term
                  ;
 
 term: factor
+    | addop %prec Uaddop
     | term mulop factor
     ;
 

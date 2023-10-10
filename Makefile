@@ -17,6 +17,7 @@ OBJS    = $(PARSER) \
 #Note Makefiel have implicit rule for OBJS-> %.o:%.c
 OBJS := $(OBJS:=.o)
 DEPS := $(OBJS:=.d)
+HANDIN_FILE = 510557011-parser.zip
 
 all: $(EXEC)
 
@@ -54,7 +55,7 @@ test: all
 
 pack:
 	make clean
-	zip -r icd23-hw2.zip . -x ".*" -x "*.zip" -x "test/*"
+	zip -r $(HANDIN_FILE) . -x ".*" -x "*.zip" -x "test/*"
 
 .PHONY: clean
 
